@@ -1,2 +1,2 @@
 #!/bin/bash
-curl https://raw.githubusercontent.com/floorup1/curl2whiptail/main/file -o test.file 
+curl https://raw.githubusercontent.com/floorup1/curl2whiptail/main/file --limit-rate 500K -o test.file 2>&1 -# | stdbuf -oL tr '\r' '\n' | stdbuf -oL tr -d '\-#%= ' | stdbuf -oL tr -s ',' '.' | stdbuf -oL cut -d . -f 1
