@@ -8,15 +8,15 @@ do
     echo $i
 done
 n=${#packages_array[@]}
-i=0
+j=0
 while [ "$j" -lt "$n" ]; do
-    pct=$(( i * 100 / n ))
+    pct=$(( j * 100 / n ))
     echo XXX
     echo $j
     echo "${msgs[j]}"
     echo XXX
     echo "$pct"
     eval "${commands[j]}"
-    i=$((i + 1))
+    j=$((j + 1))
     sleep 1s
 done | whiptail --title "Gauge" --gauge "Please wait..." 10 60 0
